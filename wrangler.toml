@@ -1,0 +1,27 @@
+name = "oh-telegram-relay"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+# setup.sh replaces this with the id of the KV namespace it creates in YOUR
+# Cloudflare account. Nothing here is shared with anyone else.
+[[kv_namespaces]]
+binding = "WAKE_KV"
+id = "REPLACE_WITH_KV_ID"
+
+# Keeps an open session's sandbox warm. 5 minutes is well inside the runtime's
+# 1200s idle timeout.
+[triggers]
+crons = ["*/5 * * * *"]
+
+[vars]
+# Nothing to configure: this relay has no quota and no licence. The only limit
+# is your own OpenHands account (20 sandboxes/day), enforced by the platform.
+
+# Optional. Shown by /bayar, e.g. your Telegram. Leave empty to hide it.
+UPGRADE_CONTACT = "https://t.me/username_kamu"
+
+# Secrets, all set by setup.sh, none stored in this file:
+#   wrangler secret put TELEGRAM_BOT_TOKEN
+#   wrangler secret put TELEGRAM_CHAT_ID
+#   wrangler secret put OPENHANDS_API_KEY
+#   wrangler secret put TELEGRAM_WEBHOOK_SECRET
