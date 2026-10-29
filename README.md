@@ -57,7 +57,7 @@ Kalau kamu tidak nyaman dengan tanggung jawab itu, jangan pasang bot ini.
 
 ## Pasang dengan satu klik
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](__DEPLOY_URL__)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/dukunz351/oh-telegram-relay)
 
 Klik tombol di atas, izinkan Cloudflare memakai akunmu, lalu isi nilai yang
 diminta:
@@ -78,7 +78,7 @@ angka itu sebagai `TELEGRAM_CHAT_ID` dan deploy ulang.
 Kalau lebih suka terminal, atau ingin memasang ulang dengan mudah:
 
 ```bash
-git clone __REPO_URL__ && cd oh-telegram-relay
+git clone https://github.com/dukunz351/oh-telegram-relay && cd oh-telegram-relay
 npx wrangler login     # buka browser, izinkan akun Cloudflare-mu
 bash setup.sh
 ```
